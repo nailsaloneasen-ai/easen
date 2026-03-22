@@ -35,8 +35,8 @@
       --silver:       #B8BDC8;
       --silver-light: #E4E8F0;
       --silver-pale:  #F4F6FA;
-      --wisteria:     #4A3870;   /* 薄い藤色 */
-      --wisteria-mid: #5A4680;   /* 藤色ミディアム */
+      --wisteria:     #6B5898;   /* より薄い藤色 */
+      --wisteria-mid: #7D6AAA;   /* 藤色ライト */
       --white:        #FFFFFF;
       --off-white:    #FDFBFD;
       --dark:         #1A1015;
@@ -252,7 +252,7 @@
 
     /* ── CONCEPT ── */
     #concept {
-      background:linear-gradient(160deg, #4A3870 0%, #5A4680 60%, #6050A0 100%);
+      background:linear-gradient(160deg, #D9709A 0%, #9B72B8 50%, #7D6AAA 100%);
       display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;
       position:relative; overflow:hidden;
     }
@@ -270,7 +270,7 @@
     }
     .concept-body { font-size:.98rem; line-height:2.2; color:rgba(255,255,255,.85); margin-top:1.6rem; }
     .concept-body strong { color:#F9D4E5; font-weight:400; }
-    .cv { position:relative; aspect-ratio:4/5; }
+    .cv { position:relative; aspect-ratio:4/3; }
     .cv-border { position:absolute; inset:0; border:1px solid rgba(242,167,195,.3); }
     .cv-border::before { content:''; position:absolute; top:-1px; left:-1px; width:22px; height:22px; border-top:2px solid var(--pink); border-left:2px solid var(--pink); }
     .cv-border::after  { content:''; position:absolute; bottom:-1px; right:-1px; width:22px; height:22px; border-bottom:2px solid var(--gold); border-right:2px solid var(--gold); }
@@ -339,7 +339,7 @@
 
     /* ── COUPONS ── */
     #coupons {
-      background:linear-gradient(160deg, #4A3870 0%, #5A4680 60%, #6050A0 100%);
+      background:linear-gradient(160deg, #D9709A 0%, #9B72B8 50%, #7D6AAA 100%);
       position:relative; overflow:hidden;
     }
     /* 金銀グラデーションライン（上下） */
@@ -355,7 +355,7 @@
     }
     .coupons-inner { position:relative; z-index:2; }
     .coupon-grid { margin-top:3rem; display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(242,167,195,.18); border:1px solid rgba(242,167,195,.18); }
-    .coupon-card { background:#523A8A; padding:2.2rem; position:relative; overflow:hidden; }
+    .coupon-card { background:#8B65A8; padding:2.2rem; position:relative; overflow:hidden; }
     .coupon-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, var(--gold), var(--silver), var(--gold), transparent); }
     /* 右側の縦ゴールドライン */
     .coupon-card::after  { content:''; position:absolute; top:10%; right:0; bottom:10%; width:1px; background:linear-gradient(to bottom, transparent, rgba(212,175,110,.25), transparent); }
@@ -384,7 +384,7 @@
 
     /* ── ACCESS ── */
     #access {
-      background:linear-gradient(160deg, #5A4680 0%, #4A3870 100%);
+      background:linear-gradient(160deg, #9B72B8 0%, #D9709A 100%);
       display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start;
       position:relative; overflow:hidden;
     }
@@ -410,7 +410,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background:#4A3870;
+      background:linear-gradient(135deg, #9B72B8 0%, #D9709A 100%);
       border-top:1px solid rgba(212,175,110,.25);
       /* 金銀の二重ライン */
       box-shadow: inset 0 1px 0 rgba(212,175,110,.35), inset 0 2px 0 rgba(184,189,200,.15);
@@ -438,40 +438,40 @@
     .cv-inner-reviews {
       position:absolute; inset:1.5rem;
       display:flex; flex-direction:column; justify-content:space-between;
-      padding:2rem 1.8rem;
+      padding:1.2rem 1.6rem;
     }
     .cv-rating-header { text-align:center; }
-    .cv-stars { font-size:1.2rem; color:var(--gold-bright); letter-spacing:.08em; }
+    .cv-stars { font-size:1rem; color:var(--gold-bright); letter-spacing:.08em; }
     .cv-rating-num {
-      font-family:'Playfair Display',serif; font-size:3rem; font-weight:400; line-height:1.1;
+      font-family:'Playfair Display',serif; font-size:2rem; font-weight:400; line-height:1.1;
       background:linear-gradient(135deg, var(--pink), var(--gold));
       -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
-    .cv-rating-label { font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.55); margin-top:.3rem; }
-    .cv-divider-line { width:100%; height:1px; background:linear-gradient(90deg, transparent, rgba(212,175,110,.35), transparent); margin:.5rem 0; }
-    .reviews-slider { position:relative; flex:1; overflow:hidden; }
+    .cv-rating-label { font-size:.65rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.7); margin-top:.2rem; }
+    .cv-divider-line { width:100%; height:1px; background:linear-gradient(90deg, transparent, rgba(212,175,110,.35), transparent); margin:.4rem 0; }
+    .reviews-slider { position:relative; flex:1; overflow:hidden; min-height:80px; }
     .review-slide {
       position:absolute; inset:0;
       display:flex; flex-direction:column; justify-content:center;
-      opacity:0; transform:translateY(12px);
+      opacity:0; transform:translateY(10px);
       transition:opacity .5s ease, transform .5s ease;
       pointer-events:none;
     }
     .review-slide.active { opacity:1; transform:translateY(0); pointer-events:auto; }
     .review-quote {
-      font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:400; line-height:.8;
-      color:var(--gold); opacity:.5; margin-bottom:.5rem;
+      font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:400; line-height:.8;
+      color:var(--gold); opacity:.5; margin-bottom:.3rem;
     }
     .review-text {
       font-family:'Playfair Display',serif; font-style:italic;
-      font-size:.92rem; line-height:1.85; color:rgba(255,255,255,.88);
+      font-size:.85rem; line-height:1.7; color:rgba(255,255,255,.92);
     }
-    .review-meta { display:flex; align-items:center; gap:.8rem; margin-top:.9rem; }
-    .review-stars { font-size:.85rem; color:var(--gold-bright); letter-spacing:.06em; }
-    .review-author { font-size:.72rem; letter-spacing:.16em; color:rgba(255,255,255,.5); text-transform:uppercase; }
-    .review-dots { display:flex; gap:.5rem; justify-content:center; padding-top:.8rem; }
+    .review-meta { display:flex; align-items:center; gap:.8rem; margin-top:.6rem; }
+    .review-stars { font-size:.8rem; color:var(--gold-bright); letter-spacing:.06em; }
+    .review-author { font-size:.68rem; letter-spacing:.14em; color:rgba(255,255,255,.6); text-transform:uppercase; }
+    .review-dots { display:flex; gap:.5rem; justify-content:center; padding-top:.5rem; }
     .review-dot {
-      width:7px; height:7px; border-radius:50%;
+      width:6px; height:6px; border-radius:50%;
       background:rgba(255,255,255,.25); border:none; cursor:pointer;
       transition:background .3s, transform .3s;
     }
