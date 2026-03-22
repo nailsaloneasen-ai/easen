@@ -727,7 +727,7 @@
   <!-- gallery section - SnapWidget connected -->
 
   <!-- SnapWidget 本体 -->
-  <div class="snapwidget-wrap reveal" id="snapwidgetWrap">
+  <div class="snapwidget-wrap reveal" id="snapwidgetWrap" style="position:relative;">
     <!-- SnapWidget -->
     <iframe src="https://snapwidget.com/embed/1120477"
             class="snapwidget-widget"
@@ -737,6 +737,12 @@
             style="border:none; overflow:hidden; width:100%; height:520px;"
             title="Posts from Instagram">
     </iframe>
+    <!-- 広告ブロック用透明オーバーレイ：クリックするとInstagramに飛ぶ -->
+    <a href="https://www.instagram.com/easen.nail/"
+       target="_blank" rel="noopener"
+       style="position:absolute; inset:0; z-index:10; display:block; cursor:pointer;"
+       aria-label="Instagramでもっと見る">
+    </a>
   </div>
 
   <!-- プレースホルダー（不要になったので非表示） -->
