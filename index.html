@@ -482,6 +482,52 @@
     .snapwidget-wrap iframe { display:block; }
     .gal-placeholder-label { font-size:.88rem; letter-spacing:.08em; color:var(--muted); text-align:center; margin-bottom:1.2rem; padding:.8rem 1rem; border:1px dashed var(--bp); background:var(--pink-pale); }
 
+    /* ── STAFF ── */
+    #staff { background:var(--pink-pale); position:relative; }
+    #staff::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, var(--gold), var(--silver), transparent); opacity:.5; }
+    .staff-grid { margin-top:3rem; display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+    .staff-card { background:white; padding:2rem 1.5rem; text-align:center; border:1px solid var(--bp); transition:transform .3s, box-shadow .3s; }
+    .staff-card:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(217,112,154,.15); }
+    .staff-avatar { width:88px; height:88px; margin:0 auto 1.2rem; border-radius:50%; background:linear-gradient(135deg, var(--pink-soft), var(--silver-pale)); border:2px solid var(--bp); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .staff-avatar svg { width:52px; height:52px; }
+    .staff-name { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:400; background:linear-gradient(110deg, var(--pink-deep), var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:.4rem; }
+    .staff-role { font-size:.72rem; letter-spacing:.12em; color:var(--muted); margin-bottom:.8rem; text-transform:uppercase; }
+    .staff-tag { display:inline-block; font-size:.62rem; padding:.2rem .6rem; background:var(--pink-soft); color:var(--pink-deep); border-radius:0; margin:.2rem; }
+
+    /* ── FLOW ── */
+    #flow { background:white; position:relative; }
+    #flow::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, var(--pink), var(--gold), transparent); opacity:.4; }
+    .flow-steps { margin-top:3rem; display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative; }
+    .flow-steps::before { content:''; position:absolute; top:36px; left:10%; right:10%; height:1px; background:linear-gradient(90deg, var(--pink), var(--gold), var(--silver)); z-index:0; }
+    .flow-step { text-align:center; position:relative; z-index:1; padding:0 .5rem; }
+    .flow-num { width:72px; height:72px; margin:0 auto 1rem; border-radius:50%; background:linear-gradient(135deg, var(--pink), var(--pink-deep)); display:flex; align-items:center; justify-content:center; }
+    .flow-num span { font-family:'Playfair Display',serif; font-size:1.4rem; color:white; font-weight:400; }
+    .flow-title { font-size:.88rem; font-weight:400; color:var(--dark); margin-bottom:.4rem; letter-spacing:.04em; }
+    .flow-desc { font-size:.72rem; color:var(--muted); line-height:1.7; }
+    .flow-time { display:inline-block; font-size:.62rem; padding:.18rem .6rem; background:var(--pink-soft); color:var(--pink-deep); margin-top:.5rem; }
+
+    /* ── FAQ ── */
+    #faq { background:var(--off-white); position:relative; }
+    #faq::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, var(--silver), var(--gold), transparent); opacity:.5; }
+    .faq-list { margin-top:3rem; display:flex; flex-direction:column; gap:1px; border:1px solid var(--bp); }
+    .faq-item { background:white; overflow:hidden; }
+    .faq-q { display:flex; justify-content:space-between; align-items:center; padding:1.4rem 2rem; cursor:pointer; gap:1rem; transition:background .3s; }
+    .faq-q:hover { background:var(--pink-pale); }
+    .faq-q-text { font-size:.92rem; color:var(--dark); font-weight:400; }
+    .faq-q-text::before { content:'Q. '; font-family:'Playfair Display',serif; font-style:italic; color:var(--pink-deep); font-weight:400; }
+    .faq-icon { width:24px; height:24px; flex-shrink:0; background:linear-gradient(135deg, var(--pink), var(--pink-deep)); border-radius:50%; display:flex; align-items:center; justify-content:center; transition:transform .3s; }
+    .faq-icon span { color:white; font-size:1rem; line-height:1; }
+    .faq-a { display:none; padding:0 2rem 1.4rem; font-size:.88rem; line-height:1.9; color:var(--muted); border-top:1px solid var(--bp); padding-top:1rem; }
+    .faq-item.open .faq-a { display:block; }
+    .faq-item.open .faq-icon { transform:rotate(45deg); }
+
+    /* ── RESPONSIVE（追加分） ── */
+    @media(max-width:768px) {
+      .staff-grid { grid-template-columns:repeat(2,1fr); }
+      .flow-steps { grid-template-columns:1fr; gap:1.5rem; }
+      .flow-steps::before { display:none; }
+    }
+
     /* ── RESPONSIVE ── */
     @media(max-width:768px) {
       nav { padding:.8rem 1.2rem; }
@@ -529,6 +575,8 @@
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#menu">Menu</a></li>
     <li><a href="#coupons">Coupon</a></li>
+    <li><a href="#flow">Flow</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#access">Access</a></li>
   </ul>
   <a class="nav-cta" href="https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000728893" target="_blank" rel="noopener">Reserve</a>
@@ -540,6 +588,8 @@
   <a href="#gallery" onclick="closeMenu()">Gallery</a>
   <a href="#menu"    onclick="closeMenu()">Menu</a>
   <a href="#coupons" onclick="closeMenu()">Coupon</a>
+  <a href="#flow"    onclick="closeMenu()">Flow</a>
+  <a href="#faq"     onclick="closeMenu()">FAQ</a>
   <a href="#access"  onclick="closeMenu()">Access</a>
   <a href="https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000728893" target="_blank" rel="noopener" class="mob-cta">ご予約はこちら</a>
 </div>
@@ -599,7 +649,7 @@
 
       <div class="cv-divider-line"></div>
 
-      <!-- 口コミスライダー -->
+      <!-- 口コミスライダー（実際の口コミ） -->
       <div class="reviews-slider" id="reviewsSlider">
 
         <div class="review-slide active">
@@ -613,7 +663,25 @@
 
         <div class="review-slide">
           <div class="review-quote">"</div>
-          <p class="review-text">ネイルが初めてで緊張していましたが、丁寧にカウンセリングしてくださって安心できました。仕上がりもとても綺麗です。</p>
+          <p class="review-text">初めて利用しました。甘皮処理も丁寧にしていただいて大満足です。持ち込みネイルを予約したのですが、したかった画像より可愛くしてもらえました！過去一可愛いワンホンネイルにしていただけました！</p>
+          <div class="review-meta">
+            <span class="review-stars">★★★★★</span>
+            <span class="review-author">10代・パート</span>
+          </div>
+        </div>
+
+        <div class="review-slide">
+          <div class="review-quote">"</div>
+          <p class="review-text">初めて行くお店だったので不安でしたが、一つ一つの作業がとても丁寧で、仕上がりも今までで一番綺麗でした。持ち込み画像通りに仕上げていただいて、パーツなど代用できるものも見せてくださり、本当に優しかったです。</p>
+          <div class="review-meta">
+            <span class="review-stars">★★★★★</span>
+            <span class="review-author">20代・会社員</span>
+          </div>
+        </div>
+
+        <div class="review-slide">
+          <div class="review-quote">"</div>
+          <p class="review-text">スタッフの方がとても丁寧で、希望通りのデザインに仕上げてくれました。店内も清潔で落ち着いた雰囲気で、リラックスして施術を受けられました。仕上がりもとても綺麗で、毎日ネイルを見るたびに気分が上がります♪</p>
           <div class="review-meta">
             <span class="review-stars">★★★★★</span>
             <span class="review-author">20代・学生</span>
@@ -622,19 +690,10 @@
 
         <div class="review-slide">
           <div class="review-quote">"</div>
-          <p class="review-text">持ち込みデザインを完璧に再現してくれました。自爪が弱くて悩んでいたのですが、フィルインで健康的な爪を保てています。</p>
+          <p class="review-text">いつも丁寧に施術していただいてありがとうございます！マグで担当スタッフさんに選んでもらったシールがかわいくてずっと眺めてます！ケアもめちゃめちゃ丁寧にしてくださって嬉しいです。</p>
           <div class="review-meta">
             <span class="review-stars">★★★★★</span>
-            <span class="review-author">30代・主婦</span>
-          </div>
-        </div>
-
-        <div class="review-slide">
-          <div class="review-quote">"</div>
-          <p class="review-text">マグネットネイルがとても綺麗で大満足です。モチも良くて長持ちします。スタッフの方も親切でまた絶対来ます！</p>
-          <div class="review-meta">
-            <span class="review-stars">★★★★★</span>
-            <span class="review-author">20代・会社員</span>
+            <span class="review-author">30代・会社員</span>
           </div>
         </div>
 
@@ -646,6 +705,7 @@
         <button class="review-dot" onclick="goReview(1)"></button>
         <button class="review-dot" onclick="goReview(2)"></button>
         <button class="review-dot" onclick="goReview(3)"></button>
+        <button class="review-dot" onclick="goReview(4)"></button>
       </div>
 
     </div>
@@ -713,6 +773,197 @@
       </div>
       <div class="feat-name">各種カード対応</div>
       <p class="feat-desc">Visa・Master・JCB・Amex・QUICPay・交通系電子マネーなど各種キャッシュレス決済に対応しています。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- STAFF -->
+<section id="staff">
+  <div class="reveal">
+    <p class="eyebrow eyebrow-p">Our Staff</p>
+    <h2 class="sec-title title-grad">スタッフ紹介</h2>
+    <div class="div-p"></div>
+  </div>
+  <div class="staff-grid">
+
+    <div class="staff-card reveal">
+      <div class="staff-avatar">
+        <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="26" cy="18" r="10" fill="rgba(217,112,154,.25)" stroke="rgba(217,112,154,.5)" stroke-width="1.5"/>
+          <path d="M6 46c0-11 9-18 20-18s20 7 20 18" fill="rgba(217,112,154,.15)" stroke="rgba(217,112,154,.4)" stroke-width="1.5"/>
+          <!-- 花のヘアアクセサリー -->
+          <circle cx="34" cy="12" r="3" fill="rgba(212,175,110,.6)"/>
+          <circle cx="36" cy="9" r="2" fill="rgba(242,167,195,.7)"/>
+        </svg>
+      </div>
+      <div class="staff-name">伊藤 深秋</div>
+      <div class="staff-role">Nail Artist · 歴2年</div>
+      <span class="staff-tag">マグネット</span>
+      <span class="staff-tag">定額デザイン</span>
+    </div>
+
+    <div class="staff-card reveal d1">
+      <div class="staff-avatar">
+        <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="26" cy="18" r="10" fill="rgba(212,175,110,.2)" stroke="rgba(212,175,110,.5)" stroke-width="1.5"/>
+          <path d="M6 46c0-11 9-18 20-18s20 7 20 18" fill="rgba(212,175,110,.12)" stroke="rgba(212,175,110,.4)" stroke-width="1.5"/>
+          <!-- リボンアクセサリー -->
+          <path d="M20 10 Q26 14 32 10 Q26 8 20 10Z" fill="rgba(242,167,195,.7)"/>
+        </svg>
+      </div>
+      <div class="staff-name">山本 沙理亜</div>
+      <div class="staff-role">Nail Artist · 歴1年</div>
+      <span class="staff-tag">定額デザイン</span>
+      <span class="staff-tag">ワンホン</span>
+    </div>
+
+    <div class="staff-card reveal d1">
+      <div class="staff-avatar">
+        <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="26" cy="18" r="10" fill="rgba(184,189,200,.2)" stroke="rgba(184,189,200,.5)" stroke-width="1.5"/>
+          <path d="M6 46c0-11 9-18 20-18s20 7 20 18" fill="rgba(184,189,200,.12)" stroke="rgba(184,189,200,.4)" stroke-width="1.5"/>
+          <!-- パールアクセサリー -->
+          <circle cx="33" cy="11" r="2.5" fill="rgba(255,255,255,.8)" stroke="rgba(184,189,200,.6)" stroke-width="1"/>
+          <circle cx="29" cy="9"  r="2"   fill="rgba(255,255,255,.8)" stroke="rgba(184,189,200,.6)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="staff-name">はまだ 理恵</div>
+      <div class="staff-role">Nail Artist · 歴2年</div>
+      <span class="staff-tag">定額デザイン</span>
+      <span class="staff-tag">フレンチ</span>
+    </div>
+
+    <div class="staff-card reveal d2">
+      <div class="staff-avatar">
+        <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="26" cy="18" r="10" fill="rgba(242,167,195,.2)" stroke="rgba(242,167,195,.5)" stroke-width="1.5"/>
+          <path d="M6 46c0-11 9-18 20-18s20 7 20 18" fill="rgba(242,167,195,.12)" stroke="rgba(242,167,195,.4)" stroke-width="1.5"/>
+          <!-- ヘアピンアクセサリー -->
+          <line x1="20" y1="10" x2="32" y2="8" stroke="rgba(212,175,110,.7)" stroke-width="1.5"/>
+          <circle cx="32" cy="8" r="2" fill="rgba(212,175,110,.6)"/>
+        </svg>
+      </div>
+      <div class="staff-name">張 ニン</div>
+      <div class="staff-role">Esthetician · 歴2年</div>
+      <span class="staff-tag">エステ</span>
+      <span class="staff-tag">ケア</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- FLOW -->
+<section id="flow">
+  <div class="reveal">
+    <p class="eyebrow eyebrow-p">How to Visit</p>
+    <h2 class="sec-title title-dark">ご予約から施術の流れ</h2>
+    <div class="div-p"></div>
+  </div>
+  <div class="flow-steps reveal">
+
+    <div class="flow-step">
+      <div class="flow-num"><span>1</span></div>
+      <div class="flow-title">ご予約</div>
+      <p class="flow-desc">ホットペッパーまたはInstagram DMより24時間受付</p>
+      <span class="flow-time">随時</span>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num" style="background:linear-gradient(135deg,#D9709A,#9B72B8);"><span>2</span></div>
+      <div class="flow-title">カウンセリング</div>
+      <p class="flow-desc">ご希望のデザイン・爪の状態を丁寧にヒアリング</p>
+      <span class="flow-time">約10分</span>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num" style="background:linear-gradient(135deg,#9B72B8,#7D6AAA);"><span>3</span></div>
+      <div class="flow-title">ケア・下準備</div>
+      <p class="flow-desc">甘皮処理・爪の形成など丁寧にケア</p>
+      <span class="flow-time">約15分</span>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num" style="background:linear-gradient(135deg,#7D6AAA,#D4AF6E);"><span>4</span></div>
+      <div class="flow-title">ネイル施術</div>
+      <p class="flow-desc">カラー・アート・パーツなど丁寧に仕上げ</p>
+      <span class="flow-time">60〜150分</span>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num" style="background:linear-gradient(135deg,#D4AF6E,#F0D080);"><span>5</span></div>
+      <div class="flow-title">仕上がり確認</div>
+      <p class="flow-desc">硬化前・仕上げ後に確認。ご満足いただけるまでご対応</p>
+      <span class="flow-time">約5分</span>
+    </div>
+
+  </div>
+  <p style="text-align:center;margin-top:2rem;font-size:.82rem;color:var(--muted);">※ 施術時間はメニューにより異なります。ジェルオフありの場合は別途お時間をいただきます。</p>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="reveal">
+    <p class="eyebrow eyebrow-p">FAQ</p>
+    <h2 class="sec-title title-dark">よくあるご質問</h2>
+    <div class="div-p"></div>
+  </div>
+  <div class="faq-list reveal">
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">初めてでも大丈夫ですか？</span>
+        <div class="faq-icon"><span>+</span></div>
+      </div>
+      <div class="faq-a">もちろんです！丁寧なカウンセリングからスタートしますので、ネイルが初めての方も安心してご来店ください。わからないことは何でもお気軽にご相談ください。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">爪が短くても・弱くても大丈夫ですか？</span>
+        <div class="faq-icon"><span>+</span></div>
+      </div>
+      <div class="faq-a">大丈夫です！パラジェル・フィルイン専門のため自爪に優しい施術が可能です。爪が弱い方や深爪の方にも対応しており、チップ長さ出しで理想の長さにすることもできます。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">持ち込みデザインはできますか？</span>
+        <div class="faq-icon"><span>+</span></div>
+      </div>
+      <div class="faq-a">はい、お持ち込み大歓迎です！InstagramやSNSで気になったデザインの画像をご用意ください。再現性の高い技術でご希望に沿った仕上がりをご提供します。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">他のサロンのネイルが付いていても来店できますか？</span>
+        <div class="faq-icon"><span>+</span></div>
+      </div>
+      <div class="faq-a">できます！初回は他店ソフトジェルオフが無料です。スカルプ・チップ長さ出し・ハードジェルのオフは別途料金が発生します。ご予約時にオフメニューのご選択をお忘れなく。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">施術後のお直しはできますか？</span>
+        <div class="faq-icon"><span>+</span></div>
+      </div>
+      <div class="faq-a">施術後1週間以内であれば無料でお直しいたします。お気軽にご連絡ください。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">当日のキャンセル・変更はできますか？</span>
+        <div class="faq-icon"><span>+</span></div>
+      </div>
+      <div class="faq-a">やむを得ない場合を除き、当日のキャンセル・時間変更はお断りしております。ご連絡なく10分以上の遅刻は無断キャンセル扱いとなりますので、確実にご来店いただける日時でのご予約をお願いいたします。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">支払い方法は何が使えますか？</span>
+        <div class="faq-icon"><span>+</span></div>
+      </div>
+      <div class="faq-a">Visa・Mastercard・JCB・American Express・QUICPay・交通系電子マネーなど各種キャッシュレス決済に対応しています。</div>
     </div>
 
   </div>
@@ -954,6 +1205,14 @@
 </footer>
 
 <script>
+  // FAQ アコーディオン
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
   // 口コミスライダー
   let currentReview = 0;
   const slides = document.querySelectorAll('.review-slide');
@@ -969,7 +1228,7 @@
 
   // 4秒ごとに自動スライド
   setInterval(() => {
-    goReview((currentReview + 1) % slides.length);
+    goReview((currentReview + 1) % 5);
   }, 4000);
 
   // Nav scroll
