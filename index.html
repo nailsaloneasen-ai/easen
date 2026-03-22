@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EASEN | Nail Salon｜大須観音・名古屋</title>
+  <meta name="description" content="名古屋・大須観音駅徒歩3分のネイルサロン EASEN。パラジェル・フィルイン専門。丁寧なカウンセリングであなただけの特別な指先に。">
+  <!-- ③ OGP / SNSシェア設定 ★ ogp.jpg を作成してGitHubにアップロードしてください ★ -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="EASEN | Nail Salon">
+  <meta property="og:title"       content="EASEN | Nail Salon｜大須観音・名古屋">
+  <meta property="og:description" content="名古屋・大須観音駅徒歩3分のネイルサロン EASEN。パラジェル・フィルイン専門。丁寧なカウンセリングであなただけの特別な指先に。">
+  <meta property="og:url"         content="https://nailsaloneasen-ai.github.io/easen/">
+  <meta property="og:image"       content="https://nailsaloneasen-ai.github.io/easen/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height"content="630">
+  <meta property="og:locale"      content="ja_JP">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="EASEN | Nail Salon｜大須観音・名古屋">
+  <meta name="twitter:description" content="名古屋・大須観音駅徒歩3分のネイルサロン EASEN。パラジェル・フィルイン専門。丁寧なカウンセリングであなただけの特別な指先に。">
+  <meta name="twitter:image"       content="https://nailsaloneasen-ai.github.io/easen/ogp.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Sacramento&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink:         #F2A7C3;
+      --pink-deep:    #D9709A;
+      --pink-pale:    #FEF0F6;
+      --pink-soft:    #FAE4EE;
+      --gold:         #D4AF6E;
+      --gold-bright:  #F0D080;
+      --gold-pale:    #FBF5E6;
+      --silver:       #B8BDC8;
+      --silver-light: #E4E8F0;
+      --silver-pale:  #F4F6FA;
+      --wisteria:     #4A3870;   /* 薄い藤色 */
+      --wisteria-mid: #5A4680;   /* 藤色ミディアム */
+      --white:        #FFFFFF;
+      --off-white:    #FDFBFD;
+      --dark:         #1A1015;
+      --mid:          #483040;
+      --muted:        #96808C;
+      --bp: rgba(242,167,195,0.28);
+      --bg: rgba(212,175,110,0.32);
+      --bs: rgba(184,189,200,0.38);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:'Zen Kaku Gothic New',sans-serif; font-weight:300;
+      background:var(--off-white); color:var(--dark); overflow-x:hidden;
+    }
+    /* shimmer grain */
+    body::before {
+      content:''; position:fixed; inset:0; pointer-events:none; z-index:9999;
+      background: repeating-linear-gradient(105deg, transparent 0%, transparent 49%, rgba(255,255,255,0.016) 50%, transparent 51%);
+      background-size:5px 5px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:200;
+      padding:1rem 3rem;
+      display:flex; justify-content:space-between; align-items:center;
+      background:rgba(254,240,246,0.88); backdrop-filter:blur(20px) saturate(1.5);
+      border-bottom:1px solid var(--bp);
+      transition:padding .3s, background .3s;
+      /* 金銀の二重ラインで高級感 */
+      box-shadow:
+        0 1px 0 rgba(212,175,110,0.4),
+        0 2px 0 rgba(184,189,200,0.2);
+    }
+    nav.scrolled {
+      padding:.7rem 3rem;
+      background:rgba(255,255,255,0.95);
+    }
+
+    /* ロゴ全体のラッパー */
+    .nav-logo {
+      display:flex; align-items:center; gap:1rem;
+      text-decoration:none; flex-shrink:0;
+    }
+
+    /* 大きな EASEN テキスト */
+    .nav-logo-main {
+      font-family:'Playfair Display',serif;
+      font-size:2.2rem; font-weight:500; letter-spacing:.22em;
+      line-height:1;
+      background:linear-gradient(135deg, var(--pink-deep) 0%, #C85A8A 40%, var(--gold) 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      /* 縦の金ラインで区切り */
+      position:relative;
+    }
+
+    /* 縦区切りライン */
+    .nav-logo-sep {
+      width:1px; height:38px; flex-shrink:0;
+      background:linear-gradient(to bottom, transparent, var(--gold), var(--silver), transparent);
+      opacity:.7;
+    }
+
+    /* Sacramento サブテキスト */
+    .nav-logo-sub {
+      display:flex; flex-direction:column; gap:.1rem;
+    }
+    .nav-logo-sacramento {
+      font-family:'Sacramento',cursive;
+      font-size:1.45rem; font-weight:400; letter-spacing:.04em; line-height:1.1;
+      background:linear-gradient(110deg, var(--gold) 0%, var(--gold-bright) 50%, var(--silver) 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .nav-logo-caption {
+      font-size:.42rem; letter-spacing:.28em; text-transform:uppercase;
+      color:var(--muted); line-height:1;
+    }
+    .nav-links { display:flex; gap:2.2rem; list-style:none; }
+    .nav-links a { font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color .3s; }
+    .nav-links a:hover { color:var(--pink-deep); }
+    .nav-cta {
+      font-size:.75rem; letter-spacing:.16em; text-transform:uppercase;
+      padding:.65rem 1.7rem; text-decoration:none; color:white;
+      background:linear-gradient(135deg, var(--pink) 0%, var(--pink-deep) 100%);
+      box-shadow:0 3px 18px rgba(217,112,154,.3); transition:all .3s;
+    }
+    .nav-cta:hover { transform:translateY(-1px); box-shadow:0 6px 26px rgba(217,112,154,.4); }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    .hamburger span { display:block; width:24px; height:1px; background:var(--mid); transition:all .3s; }
+    .hamburger.open span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+    .mob-menu {
+      display:none; position:fixed; inset:0; z-index:190;
+      background:rgba(254,240,246,.97); backdrop-filter:blur(22px);
+      flex-direction:column; align-items:center; justify-content:center; gap:2.8rem;
+    }
+    .mob-menu.open { display:flex; }
+    .mob-menu a { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:400; letter-spacing:.18em; color:var(--dark); text-decoration:none; }
+    .mob-menu .mob-cta {
+      font-family:'Zen Kaku Gothic New',sans-serif; font-size:.9rem; letter-spacing:.18em;
+      padding:.95rem 3rem; color:white;
+      background:linear-gradient(135deg, var(--pink), var(--pink-deep));
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end;
+      padding:0 3rem 5.5rem; position:relative; overflow:hidden;
+    }
+    .hero-bg {
+      position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 75% 55% at 72% 28%, rgba(242,167,195,.22) 0%, transparent 62%),
+        radial-gradient(ellipse 45% 65% at 88% 78%, rgba(212,175,110,.1) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 50% at 8%  62%, rgba(184,189,200,.1) 0%, transparent 55%),
+        linear-gradient(155deg, #FFF5F9 0%, #FDFBFD 45%, #F8F6FF 100%);
+    }
+    /* decorative panel */
+    .hero-panel {
+      position:absolute; top:6.5rem; right:3rem;
+      width:41vw; max-width:450px; aspect-ratio:3/4;
+      animation:fadeInRight 1.2s ease .3s both;
+    }
+    .hp-border {
+      position:absolute; inset:0; border:1px solid rgba(242,167,195,.35);
+    }
+    .hp-border::before {
+      content:''; position:absolute; top:-1px; left:-1px; width:20px; height:20px;
+      border-top:2px solid var(--gold); border-left:2px solid var(--gold);
+    }
+    .hp-border::after {
+      content:''; position:absolute; bottom:-1px; right:-1px; width:20px; height:20px;
+      border-bottom:2px solid var(--pink); border-right:2px solid var(--pink);
+    }
+    .hp-inner {
+      position:absolute; inset:1.2rem;
+      background:linear-gradient(145deg, rgba(253,240,245,.88), rgba(255,255,255,.55));
+      border:1px solid rgba(255,255,255,.8); backdrop-filter:blur(8px);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .hp-inner svg { width:72%; height:72%; opacity:.55; }
+
+    .hero-eye {
+      font-size:.78rem; letter-spacing:.38em; text-transform:uppercase; color:var(--pink-deep);
+      margin-bottom:1.2rem; animation:fadeInUp .8s ease .45s both;
+    }
+    .hero-title {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(3rem, 7vw, 6rem); font-weight:400; line-height:1.07;
+      animation:fadeInUp .8s ease .55s both;
+    }
+    .hero-title .t-italic { font-style:italic; display:block; color:var(--dark); }
+    .hero-title .t-grad {
+      display:block;
+      background:linear-gradient(110deg, var(--pink-deep) 0%, var(--gold) 55%, var(--silver) 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .hero-sub {
+      margin-top:1.6rem; font-size:1rem; letter-spacing:.06em; color:var(--mid);
+      max-width:380px; line-height:2.0; animation:fadeInUp .8s ease .65s both;
+    }
+    .hero-tags {
+      margin-top:1.2rem; display:flex; flex-wrap:wrap; gap:.5rem;
+      animation:fadeInUp .8s ease .72s both;
+    }
+    .htag {
+      font-size:.72rem; letter-spacing:.1em; padding:.32rem .9rem;
+      border:1px solid var(--bs); color:var(--mid); background:rgba(255,255,255,.65);
+    }
+    .hero-cta { margin-top:2.8rem; display:flex; gap:1.4rem; align-items:center; animation:fadeInUp .8s ease .8s both; }
+    .btn-main {
+      display:inline-block; padding:1.1rem 3rem; text-decoration:none; color:white;
+      font-size:.82rem; letter-spacing:.2em; text-transform:uppercase;
+      background:linear-gradient(135deg, var(--pink) 0%, var(--pink-deep) 60%, var(--gold) 130%);
+      box-shadow:0 4px 24px rgba(217,112,154,.36); transition:all .35s; position:relative; overflow:hidden;
+    }
+    .btn-main::before { content:''; position:absolute; inset:0; background:rgba(255,255,255,.18); opacity:0; transition:opacity .35s; }
+    .btn-main:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(217,112,154,.45); }
+    .btn-main:hover::before { opacity:1; }
+    .btn-ghost {
+      display:inline-flex; align-items:center; gap:.4rem;
+      font-size:.88rem; letter-spacing:.14em; color:var(--mid); text-decoration:none; transition:color .3s;
+    }
+    .btn-ghost:hover { color:var(--pink-deep); }
+    .btn-ghost::after { content:'→'; transition:transform .3s; }
+    .btn-ghost:hover::after { transform:translateX(4px); }
+    .hero-scroll {
+      position:absolute; bottom:2.5rem; right:3rem;
+      display:flex; flex-direction:column; align-items:center; gap:.5rem;
+      font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--muted);
+      animation:fadeIn 1s ease 1.3s both;
+    }
+    .scroll-bar { width:1px; height:46px; background:linear-gradient(to bottom, var(--pink-deep), transparent); animation:scrollPulse 1.9s ease-in-out infinite; }
+
+    /* ── SHARED ── */
+    section { padding:7rem 3rem; }
+    .eyebrow { font-size:.72rem; letter-spacing:.38em; text-transform:uppercase; margin-bottom:1rem; }
+    .eyebrow-p { color:var(--pink-deep); }
+    .eyebrow-g { color:var(--gold); }
+    .eyebrow-s { color:var(--silver); }
+    .sec-title { font-family:'Playfair Display',serif; font-size:clamp(2.2rem, 4vw, 3.4rem); font-weight:400; line-height:1.25; letter-spacing:.03em; }
+    .title-dark { color:var(--dark); }
+    .title-white { color:#fff; }
+    .title-grad {
+      background:linear-gradient(110deg, var(--pink-deep), var(--gold));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .div-p { width:60px; height:1.5px; background:linear-gradient(90deg, var(--pink-deep), var(--gold), transparent); margin:1.8rem 0; }
+    .div-g { width:60px; height:1.5px; background:linear-gradient(90deg, var(--gold), var(--silver), transparent); margin:1.8rem 0; }
+    .div-center { margin-left:auto; margin-right:auto; }
+
+    /* ── CONCEPT ── */
+    #concept {
+      background:linear-gradient(160deg, #4A3870 0%, #5A4680 60%, #6050A0 100%);
+      display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;
+      position:relative; overflow:hidden;
+    }
+    /* 金・銀の水平装飾ライン */
+    #concept::after {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--silver) 70%, transparent 100%);
+      opacity:.5;
+    }
+    #concept::before {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background:
+        radial-gradient(ellipse 50% 60% at 80% 50%, rgba(242,167,195,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 50% at 20% 30%, rgba(212,175,110,.06) 0%, transparent 55%);
+    }
+    .concept-body { font-size:.98rem; line-height:2.2; color:rgba(255,255,255,.85); margin-top:1.6rem; }
+    .concept-body strong { color:#F9D4E5; font-weight:400; }
+    .cv { position:relative; aspect-ratio:4/5; }
+    .cv-border { position:absolute; inset:0; border:1px solid rgba(242,167,195,.3); }
+    .cv-border::before { content:''; position:absolute; top:-1px; left:-1px; width:22px; height:22px; border-top:2px solid var(--pink); border-left:2px solid var(--pink); }
+    .cv-border::after  { content:''; position:absolute; bottom:-1px; right:-1px; width:22px; height:22px; border-bottom:2px solid var(--gold); border-right:2px solid var(--gold); }
+    .cv-inner { position:absolute; inset:1.5rem; background:linear-gradient(145deg, rgba(242,167,195,.08), rgba(212,175,110,.04)); display:flex; flex-direction:column; justify-content:center; align-items:center; gap:2.5rem; }
+    .cv-stat { text-align:center; }
+    .cv-num { font-family:'Playfair Display',serif; font-size:3.6rem; font-weight:400; line-height:1; background:linear-gradient(135deg, var(--pink), var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .cv-label { font-size:.82rem; letter-spacing:.18em; color:rgba(255,255,255,.75); margin-top:.5rem; text-transform:uppercase; }
+    .cv-hr { width:32px; height:1px; background:rgba(242,167,195,.3); }
+
+    /* ── FEATURES ── */
+    #features {
+      background:var(--pink-pale);
+      position:relative;
+    }
+    #features::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:1px;
+      background:linear-gradient(90deg, transparent 0%, var(--silver) 30%, var(--gold) 50%, var(--silver) 70%, transparent 100%);
+      opacity:.5;
+    }
+    .feat-grid { margin-top:3rem; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--bp); border:1px solid var(--bp); }
+    .feat-card { background:white; padding:2.8rem 2.2rem; transition:background .35s; position:relative; overflow:hidden; }
+    .feat-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--pink), var(--gold), var(--silver)); transform:scaleX(0); transition:transform .35s; }
+    .feat-card:hover { background:var(--pink-soft); }
+    .feat-card:hover::after { transform:scaleX(1); }
+    .feat-icon { width:52px; height:52px; margin-bottom:1.4rem; background:linear-gradient(135deg, var(--pink-soft), var(--silver-pale)); border:1px solid var(--bp); display:flex; align-items:center; justify-content:center; }
+    .feat-icon svg { width:24px; height:24px; }
+    .feat-name { font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:400; letter-spacing:.06em; margin-bottom:.9rem; background:linear-gradient(110deg, var(--pink-deep), var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .feat-desc { font-size:.88rem; line-height:2.0; color:var(--mid); }
+
+    /* ── GALLERY ── */
+    #gallery { background:white; }
+    .gallery-head { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:2rem; }
+    .insta-link { display:inline-flex; align-items:center; gap:.5rem; font-size:.88rem; letter-spacing:.1em; color:var(--pink-deep); text-decoration:none; border-bottom:1px solid var(--bp); padding-bottom:.25rem; transition:border-color .3s; }
+    .insta-link:hover { border-color:var(--pink-deep); }
+    .embed-note { background:linear-gradient(135deg, var(--pink-pale), var(--silver-pale)); border:1px solid var(--bp); padding:1.4rem 2rem; margin-bottom:2rem; font-size:.88rem; line-height:2.0; color:var(--mid); }
+    .embed-note strong { color:var(--pink-deep); font-weight:400; display:block; margin-bottom:.5rem; font-size:.92rem; letter-spacing:.06em; }
+    .gal-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; }
+    .gal-cell { aspect-ratio:1; background:linear-gradient(145deg, var(--pink-soft), var(--silver-pale)); position:relative; overflow:hidden; cursor:pointer; }
+    .gal-cell::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg, rgba(217,112,154,.55), rgba(212,175,110,.38)); opacity:0; transition:opacity .4s; }
+    .gal-cell:hover::before { opacity:1; }
+    .gal-cell-in { width:100%; height:100%; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:.6rem; }
+    .gal-cell-label { font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); }
+    .gal-cta { text-align:center; margin-top:2.5rem; }
+
+    /* ── MENU ── */
+    #menu { background:var(--off-white); }
+    .menu-tabs { display:flex; margin-top:2.2rem; margin-bottom:0; border-bottom:1px solid var(--bp); overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none; }
+    .menu-tabs::-webkit-scrollbar { display:none; }
+    .menu-tab { padding:.75rem 1.8rem; font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); cursor:pointer; background:none; border:none; border-bottom:2px solid transparent; transition:all .3s; white-space:nowrap; }
+    .menu-tab.active { color:var(--pink-deep); border-bottom-color:var(--pink-deep); }
+    .menu-panel { display:none; }
+    .menu-panel.active { display:block; }
+    .menu-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--bp); border:1px solid var(--bp); }
+    .menu-cat { background:white; padding:2.4rem; }
+    .menu-cat-head { font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:400; font-style:italic; letter-spacing:.08em; margin-bottom:1.2rem; padding-bottom:.9rem; border-bottom:1px solid var(--bp); background:linear-gradient(110deg, var(--pink-deep), var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .menu-list { list-style:none; }
+    .menu-row { display:flex; justify-content:space-between; align-items:baseline; padding:.75rem 0; border-bottom:1px solid rgba(242,167,195,.1); font-size:.9rem; }
+    .menu-row:last-child { border-bottom:none; }
+    .menu-name { color:var(--mid); font-size:.9rem; }
+    .menu-note-sm { font-size:.75rem; color:var(--muted); margin-top:.15rem; }
+    .menu-price { font-family:'Playfair Display',serif; font-size:1rem; color:var(--dark); white-space:nowrap; margin-left:.5rem; font-weight:500; }
+    .bdg-p { font-size:.58rem; background:linear-gradient(135deg, var(--pink), var(--pink-deep)); color:white; padding:.12rem .42rem; letter-spacing:.08em; margin-left:.35rem; vertical-align:middle; }
+    .bdg-g { font-size:.58rem; background:linear-gradient(135deg, var(--gold), var(--gold-bright)); color:white; padding:.12rem .42rem; letter-spacing:.08em; margin-left:.35rem; vertical-align:middle; }
+    .bdg-s { font-size:.58rem; background:linear-gradient(135deg, var(--silver), var(--silver-light)); color:#555; padding:.12rem .42rem; letter-spacing:.08em; margin-left:.35rem; vertical-align:middle; }
+    .menu-foot-note { margin-top:1.4rem; font-size:.82rem; color:var(--muted); line-height:1.9; letter-spacing:.03em; }
+
+    /* ── COUPONS ── */
+    #coupons {
+      background:linear-gradient(160deg, #4A3870 0%, #5A4680 60%, #6050A0 100%);
+      position:relative; overflow:hidden;
+    }
+    /* 金銀グラデーションライン（上下） */
+    #coupons::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg, transparent 0%, var(--silver) 25%, var(--gold) 50%, var(--silver) 75%, transparent 100%);
+      opacity:.55; z-index:1;
+    }
+    #coupons::after {
+      content:''; position:absolute; bottom:0; left:0; right:0; height:1px;
+      background:linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--silver) 60%, transparent 100%);
+      opacity:.4; z-index:1;
+    }
+    .coupons-inner { position:relative; z-index:2; }
+    .coupon-grid { margin-top:3rem; display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(242,167,195,.18); border:1px solid rgba(242,167,195,.18); }
+    .coupon-card { background:#523A8A; padding:2.2rem; position:relative; overflow:hidden; }
+    .coupon-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, var(--gold), var(--silver), var(--gold), transparent); }
+    /* 右側の縦ゴールドライン */
+    .coupon-card::after  { content:''; position:absolute; top:10%; right:0; bottom:10%; width:1px; background:linear-gradient(to bottom, transparent, rgba(212,175,110,.25), transparent); }
+    .cbadges { display:flex; gap:.4rem; flex-wrap:wrap; margin-bottom:1rem; }
+    .cbadge { font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; padding:.2rem .6rem; border:1px solid rgba(242,167,195,.38); color:var(--pink); }
+    .cbadge.g { border-color:rgba(212,175,110,.38); color:var(--gold); }
+    .cbadge.s { border-color:rgba(184,189,200,.32); color:rgba(255,255,255,.7); }
+    .cprice { font-family:'Playfair Display',serif; font-size:2.6rem; font-weight:400; line-height:1; background:linear-gradient(110deg, var(--pink), var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .cname { font-size:.92rem; color:rgba(255,255,255,.92); margin:.65rem 0 .5rem; line-height:1.6; font-weight:400; }
+    .cdesc { font-size:.78rem; color:rgba(255,255,255,.58); line-height:1.85; }
+
+    /* ── RESERVE ── */
+    #reserve { background:linear-gradient(160deg, var(--pink-pale) 0%, white 50%, var(--silver-pale) 100%); text-align:center; position:relative; overflow:hidden; }
+    #reserve::before { content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse 60% 50% at 50% 0%, rgba(242,167,195,.14) 0%, transparent 60%); }
+    .reserve-wrap { max-width:620px; margin:0 auto; position:relative; }
+    .reserve-body { margin-top:1.5rem; font-size:.98rem; line-height:2.1; color:var(--mid); }
+    .reserve-btns { margin-top:3rem; display:flex; gap:1.4rem; justify-content:center; flex-wrap:wrap; }
+    .btn-reserve { display:inline-block; padding:1.1rem 3rem; text-decoration:none; color:white; font-size:.82rem; letter-spacing:.2em; text-transform:uppercase; background:linear-gradient(135deg, var(--pink), var(--pink-deep) 60%, var(--gold) 130%); box-shadow:0 4px 22px rgba(217,112,154,.34); transition:all .35s; }
+    .btn-reserve:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(217,112,154,.44); }
+    .btn-reserve-out { display:inline-flex; align-items:center; gap:.5rem; padding:1.1rem 2.4rem; border:1px solid var(--bp); color:var(--mid); text-decoration:none; font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; background:white; transition:all .3s; }
+    .btn-reserve-out:hover { border-color:var(--pink); color:var(--pink-deep); }
+    .reserve-info { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--bp); border:1px solid var(--bp); margin-top:4rem; }
+    .ri { background:white; padding:2rem 1.5rem; }
+    .ri-label { font-size:.68rem; letter-spacing:.24em; text-transform:uppercase; color:var(--pink-deep); margin-bottom:.7rem; }
+    .ri-val { font-size:.92rem; line-height:1.9; color:var(--mid); }
+
+    /* ── ACCESS ── */
+    #access {
+      background:linear-gradient(160deg, #5A4680 0%, #4A3870 100%);
+      display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start;
+      position:relative; overflow:hidden;
+    }
+    /* 上部の金銀ライン */
+    #access::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg, transparent 0%, var(--gold) 35%, var(--silver) 65%, transparent 100%);
+      opacity:.5; z-index:1;
+    }
+    #access::after { content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse 50% 60% at 80% 50%, rgba(200,205,216,.07) 0%, transparent 60%); }
+    .acc-list { margin-top:2rem; display:flex; flex-direction:column; gap:1.8rem; }
+    .acc-row { display:flex; gap:1.4rem; align-items:flex-start; }
+    .acc-ico { width:22px; flex-shrink:0; margin-top:2px; font-size:1.1rem; }
+    .acc-label { font-size:.68rem; letter-spacing:.22em; text-transform:uppercase; color:var(--pink); margin-bottom:.32rem; }
+    .acc-val { font-size:.95rem; line-height:1.95; color:rgba(255,255,255,.88); }
+    .acc-val a { color:var(--gold); text-decoration:none; }
+    .map-wrap { width:100%; aspect-ratio:4/3; border:1px solid rgba(212,175,110,.3); overflow:hidden; position:relative; z-index:1;
+      box-shadow:0 0 0 1px rgba(184,189,200,.15), 4px 4px 0 rgba(212,175,110,.1); }
+    .map-wrap iframe { width:100%; height:100%; border:none; filter:grayscale(.15) sepia(.1) brightness(.94); }
+    .map-ph { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; background:rgba(255,255,255,.04); }
+    .map-ph-ico { font-size:2.5rem; opacity:.35; }
+    .map-ph-txt { font-size:.88rem; letter-spacing:.12em; color:rgba(212,175,110,.6); }
+
+    /* ── FOOTER ── */
+    footer {
+      background:#4A3870;
+      border-top:1px solid rgba(212,175,110,.25);
+      /* 金銀の二重ライン */
+      box-shadow: inset 0 1px 0 rgba(212,175,110,.35), inset 0 2px 0 rgba(184,189,200,.15);
+      padding:2.7rem 3rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.8rem;
+    }
+    .footer-logo { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:400; letter-spacing:.28em; background:linear-gradient(110deg, var(--pink), var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .footer-sns { display:flex; gap:1.8rem; }
+    .footer-sns a { font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(242,167,195,.7); text-decoration:none; transition:color .3s; }
+    .footer-sns a:hover { color:var(--pink); }
+    .footer-copy { font-size:.75rem; letter-spacing:.1em; color:rgba(255,255,255,.4); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeInUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeInRight { from{opacity:0;transform:translateX(24px)} to{opacity:1;transform:translateX(0)} }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    @keyframes scrollPulse { 0%,100%{opacity:1} 50%{opacity:.28} }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .d1 { transition-delay:.12s; }
+    .d2 { transition-delay:.24s; }
+
+    /* menu tab scrollbar非表示（上の定義に統合済み）*/
+
+    /* 口コミスライダー（cv-inner-reviews）*/
+    .cv-inner-reviews {
+      position:absolute; inset:1.5rem;
+      display:flex; flex-direction:column; justify-content:space-between;
+      padding:2rem 1.8rem;
+    }
+    .cv-rating-header { text-align:center; }
+    .cv-stars { font-size:1.2rem; color:var(--gold-bright); letter-spacing:.08em; }
+    .cv-rating-num {
+      font-family:'Playfair Display',serif; font-size:3rem; font-weight:400; line-height:1.1;
+      background:linear-gradient(135deg, var(--pink), var(--gold));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .cv-rating-label { font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.55); margin-top:.3rem; }
+    .cv-divider-line { width:100%; height:1px; background:linear-gradient(90deg, transparent, rgba(212,175,110,.35), transparent); margin:.5rem 0; }
+    .reviews-slider { position:relative; flex:1; overflow:hidden; }
+    .review-slide {
+      position:absolute; inset:0;
+      display:flex; flex-direction:column; justify-content:center;
+      opacity:0; transform:translateY(12px);
+      transition:opacity .5s ease, transform .5s ease;
+      pointer-events:none;
+    }
+    .review-slide.active { opacity:1; transform:translateY(0); pointer-events:auto; }
+    .review-quote {
+      font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:400; line-height:.8;
+      color:var(--gold); opacity:.5; margin-bottom:.5rem;
+    }
+    .review-text {
+      font-family:'Playfair Display',serif; font-style:italic;
+      font-size:.92rem; line-height:1.85; color:rgba(255,255,255,.88);
+    }
+    .review-meta { display:flex; align-items:center; gap:.8rem; margin-top:.9rem; }
+    .review-stars { font-size:.85rem; color:var(--gold-bright); letter-spacing:.06em; }
+    .review-author { font-size:.72rem; letter-spacing:.16em; color:rgba(255,255,255,.5); text-transform:uppercase; }
+    .review-dots { display:flex; gap:.5rem; justify-content:center; padding-top:.8rem; }
+    .review-dot {
+      width:7px; height:7px; border-radius:50%;
+      background:rgba(255,255,255,.25); border:none; cursor:pointer;
+      transition:background .3s, transform .3s;
+    }
+    .review-dot.active { background:var(--gold); transform:scale(1.25); }
+
+    /* ④ SnapWidget */
+    .snapwidget-wrap { width:100%; overflow:hidden; }
+    .snapwidget-wrap iframe { display:block; }
+    .gal-placeholder-label { font-size:.88rem; letter-spacing:.08em; color:var(--muted); text-align:center; margin-bottom:1.2rem; padding:.8rem 1rem; border:1px dashed var(--bp); background:var(--pink-pale); }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:768px) {
+      nav { padding:.8rem 1.2rem; }
+      nav.scrolled { padding:.6rem 1.2rem; }
+      .nav-links,.nav-cta { display:none; }
+      .hamburger { display:flex; }
+      .nav-logo-sep,.nav-logo-sub { display:none; }
+      .nav-logo-main { font-size:1.8rem; letter-spacing:.18em; }
+      #hero { padding:0 1.5rem 4.5rem; }
+      .hero-panel { display:none; }
+      .hero-title { font-size:clamp(2.7rem,11vw,4.5rem); }
+      .hero-cta { flex-direction:column; align-items:flex-start; gap:1rem; }
+      .hero-scroll,.hero-tags { display:none; }
+      section { padding:5rem 1.5rem; }
+      #concept { grid-template-columns:1fr; gap:3rem; }
+      /* モバイルの口コミパネルは固定高さで十分な余裕を確保 */
+      .cv { aspect-ratio:unset; height:360px; }
+      .feat-grid { grid-template-columns:1fr; }
+      /* SnapWidget モバイルは高さを短く */
+      .snapwidget-wrap iframe { height:340px !important; }
+      .gal-grid { grid-template-columns:repeat(2,1fr); }
+      .menu-grid,.coupon-grid { grid-template-columns:1fr; }
+      .reserve-info { grid-template-columns:1fr; }
+      .reserve-btns { flex-direction:column; align-items:center; }
+      #access { grid-template-columns:1fr; gap:3rem; }
+      footer { padding:2rem 1.5rem; flex-direction:column; align-items:center; text-align:center; }
+      .cprice { font-size:2rem; }
+      .sec-title { font-size:clamp(1.9rem, 6vw, 2.6rem); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#hero">
+    <span class="nav-logo-main">EASEN</span>
+    <span class="nav-logo-sep"></span>
+    <span class="nav-logo-sub">
+      <span class="nav-logo-sacramento">Easen Nail salon</span>
+    </span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#concept">Concept</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#coupons">Coupon</a></li>
+    <li><a href="#access">Access</a></li>
+  </ul>
+  <a class="nav-cta" href="https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000728893" target="_blank" rel="noopener">Reserve</a>
+  <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="#concept" onclick="closeMenu()">Concept</a>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#menu"    onclick="closeMenu()">Menu</a>
+  <a href="#coupons" onclick="closeMenu()">Coupon</a>
+  <a href="#access"  onclick="closeMenu()">Access</a>
+  <a href="https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000728893" target="_blank" rel="noopener" class="mob-cta">ご予約はこちら</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-panel">
+    <div class="hp-border"></div>
+    <div class="hp-inner">
+      <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(242,167,195,.6)"/><stop offset="100%" stop-color="rgba(212,175,110,.4)"/></linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(184,189,200,.5)"/><stop offset="100%" stop-color="rgba(242,167,195,.3)"/></linearGradient>
+          <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(242,167,195,.55)"/><stop offset="100%" stop-color="rgba(217,112,154,.15)"/></linearGradient>
+          <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(212,175,110,.5)"/><stop offset="100%" stop-color="rgba(240,208,128,.12)"/></linearGradient>
+        </defs>
+        <circle cx="150" cy="200" r="112" fill="none" stroke="url(#g1)" stroke-width=".7"/>
+        <circle cx="150" cy="200" r="82"  fill="none" stroke="url(#g2)" stroke-width=".9"/>
+        <circle cx="150" cy="200" r="52"  fill="none" stroke="url(#g1)" stroke-width=".6"/>
+        <ellipse cx="150" cy="118" rx="15" ry="32" fill="url(#g3)" opacity=".5" transform="rotate(0   150 200)"/>
+        <ellipse cx="150" cy="118" rx="15" ry="32" fill="url(#g4)" opacity=".4" transform="rotate(45  150 200)"/>
+        <ellipse cx="150" cy="118" rx="15" ry="32" fill="url(#g3)" opacity=".42" transform="rotate(90  150 200)"/>
+        <ellipse cx="150" cy="118" rx="15" ry="32" fill="url(#g4)" opacity=".4" transform="rotate(135 150 200)"/>
+        <ellipse cx="150" cy="118" rx="15" ry="32" fill="url(#g3)" opacity=".5" transform="rotate(180 150 200)"/>
+        <ellipse cx="150" cy="118" rx="15" ry="32" fill="url(#g4)" opacity=".4" transform="rotate(225 150 200)"/>
+        <ellipse cx="150" cy="118" rx="15" ry="32" fill="url(#g3)" opacity=".42" transform="rotate(270 150 200)"/>
+        <ellipse cx="150" cy="118" rx="15" ry="32" fill="url(#g4)" opacity=".4" transform="rotate(315 150 200)"/>
+        <circle cx="150" cy="200" r="9" fill="url(#g3)" opacity=".5"/>
+        <line x1="14" y1="14" x2="46" y2="14" stroke="rgba(212,175,110,.4)" stroke-width=".8"/>
+        <line x1="14" y1="14" x2="14" y2="46" stroke="rgba(212,175,110,.4)" stroke-width=".8"/>
+        <line x1="286" y1="14" x2="254" y2="14" stroke="rgba(242,167,195,.4)" stroke-width=".8"/>
+        <line x1="286" y1="14" x2="286" y2="46" stroke="rgba(242,167,195,.4)" stroke-width=".8"/>
+        <line x1="14" y1="386" x2="46" y2="386" stroke="rgba(184,189,200,.4)" stroke-width=".8"/>
+        <line x1="14" y1="386" x2="14" y2="354" stroke="rgba(184,189,200,.4)" stroke-width=".8"/>
+        <line x1="286" y1="386" x2="254" y2="386" stroke="rgba(212,175,110,.4)" stroke-width=".8"/>
+        <line x1="286" y1="386" x2="286" y2="354" stroke="rgba(212,175,110,.4)" stroke-width=".8"/>
+      </svg>
+    </div>
+  </div>
+
+  <p class="hero-eye">Nail Salon · 大須観音 · Nagoya</p>
+  <h1 class="hero-title">
+    <span class="t-italic">Craft your</span>
+    <span class="t-grad">signature beauty.</span>
+  </h1>
+  <p class="hero-sub">自爪に優しいパラジェル・フィルイン専門。<br>丁寧なカウンセリングで<br>あなただけの特別な指先を。</p>
+  <div class="hero-tags">
+    <span class="htag">パラジェル</span><span class="htag">フィルイン</span>
+    <span class="htag">長さ出し</span><span class="htag">マグネット</span>
+    <span class="htag">持ち込みOK</span><span class="htag">完全予約制</span>
+  </div>
+  <div class="hero-cta">
+    <a class="btn-main" href="https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000728893" target="_blank" rel="noopener">ご予約はこちら</a>
+    <a class="btn-ghost" href="#gallery">作品ギャラリー</a>
+  </div>
+  <div class="hero-scroll"><div class="scroll-bar"></div><span>Scroll</span></div>
+</section>
+
+<!-- CONCEPT -->
+<section id="concept">
+  <div class="reveal">
+    <p class="eyebrow eyebrow-g">Our Philosophy</p>
+    <h2 class="sec-title title-white">美しさは、<br>細部に宿る。</h2>
+    <div class="div-g"></div>
+    <p class="concept-body">EASENは、<strong>自爪に優しいパラジェル・フィルイン</strong>を専門とするネイルサロン。<br><br>丁寧なカウンセリングと施術で、爪が弱い方や今まで諦めていた方にも安心してご来店いただけます。シンプルが好きな方も、個性的なデザインを求める方も。ふとした瞬間に指先を見て、思わず笑顔になれるような上質な仕上がりを追求しています。</p>
+  </div>
+
+  <!-- 口コミパネル -->
+  <div class="cv reveal d1">
+    <div class="cv-border"></div>
+    <div class="cv-inner-reviews">
+
+      <!-- 評価ヘッダー -->
+      <div class="cv-rating-header">
+        <div class="cv-stars">★★★★★</div>
+        <div class="cv-rating-num">4.22</div>
+        <div class="cv-rating-label">ホットペッパー口コミ平均</div>
+      </div>
+
+      <div class="cv-divider-line"></div>
+
+      <!-- 口コミスライダー -->
+      <div class="reviews-slider" id="reviewsSlider">
+
+        <div class="review-slide active">
+          <div class="review-quote">"</div>
+          <p class="review-text">希望通りのデザインでめちゃくちゃ可愛いです。想像以上に可愛くしていただいてテンション上がりました！またお願いします。</p>
+          <div class="review-meta">
+            <span class="review-stars">★★★★★</span>
+            <span class="review-author">30代・会社員</span>
+          </div>
+        </div>
+
+        <div class="review-slide">
+          <div class="review-quote">"</div>
+          <p class="review-text">ネイルが初めてで緊張していましたが、丁寧にカウンセリングしてくださって安心できました。仕上がりもとても綺麗です。</p>
+          <div class="review-meta">
+            <span class="review-stars">★★★★★</span>
+            <span class="review-author">20代・学生</span>
+          </div>
+        </div>
+
+        <div class="review-slide">
+          <div class="review-quote">"</div>
+          <p class="review-text">持ち込みデザインを完璧に再現してくれました。自爪が弱くて悩んでいたのですが、フィルインで健康的な爪を保てています。</p>
+          <div class="review-meta">
+            <span class="review-stars">★★★★★</span>
+            <span class="review-author">30代・主婦</span>
+          </div>
+        </div>
+
+        <div class="review-slide">
+          <div class="review-quote">"</div>
+          <p class="review-text">マグネットネイルがとても綺麗で大満足です。モチも良くて長持ちします。スタッフの方も親切でまた絶対来ます！</p>
+          <div class="review-meta">
+            <span class="review-stars">★★★★★</span>
+            <span class="review-author">20代・会社員</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ドットナビ -->
+      <div class="review-dots" id="reviewDots">
+        <button class="review-dot active" onclick="goReview(0)"></button>
+        <button class="review-dot" onclick="goReview(1)"></button>
+        <button class="review-dot" onclick="goReview(2)"></button>
+        <button class="review-dot" onclick="goReview(3)"></button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="reveal">
+    <p class="eyebrow eyebrow-p">Why EASEN</p>
+    <h2 class="sec-title title-grad">選ばれる理由</h2>
+    <div class="div-p"></div>
+  </div>
+  <div class="feat-grid">
+
+    <div class="feat-card reveal">
+      <div class="feat-icon">
+        <!-- 葉・自然・やさしさ -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="icon-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#D9709A"/><stop offset="100%" stop-color="#D4AF6E"/></linearGradient></defs><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/><path d="M8 12s1-4 4-4 4 4 4 4-1 4-4 4-4-4-4-4z"/></svg>
+      </div>
+      <div class="feat-name">パラジェル専門</div>
+      <p class="feat-desc">サンディング不要で自爪を傷めない施術。全メニューフィルイン対応で、繰り返しても健康的な爪をキープします。</p>
+    </div>
+
+    <div class="feat-card reveal d1">
+      <div class="feat-icon">
+        <!-- ペン・デザイン -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <div class="feat-name">持ち込みデザインOK</div>
+      <p class="feat-desc">InstagramやSNSで気になったデザインをそのままお持ち込み可能。再現性の高い技術で理想の指先へ。</p>
+    </div>
+
+    <div class="feat-card reveal d2">
+      <div class="feat-icon">
+        <!-- ハート・ケア -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </div>
+      <div class="feat-name">丁寧なカウンセリング</div>
+      <p class="feat-desc">ライフスタイルや爪の状態に合わせた施術プランをご提案。初めての方も安心してご来店いただけます。</p>
+    </div>
+
+    <div class="feat-card reveal">
+      <div class="feat-icon">
+        <!-- 魔法の棒・アート -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+      <div class="feat-name">長さ出し・スカルプ</div>
+      <p class="feat-desc">チップ長さ出しで短い爪でも理想の長さに。深爪のお悩みにも対応し、美しいフォルムに整えます。</p>
+    </div>
+
+    <div class="feat-card reveal d1">
+      <div class="feat-icon">
+        <!-- カレンダー・予約 -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <div class="feat-name">完全予約制</div>
+      <p class="feat-desc">待ち時間なくゆったりとご来店いただけます。ドリンクサービスも完備。ホットペッパーまたはInstagram DMよりご予約ください。</p>
+    </div>
+
+    <div class="feat-card reveal d2">
+      <div class="feat-icon">
+        <!-- カード・支払い -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div class="feat-name">各種カード対応</div>
+      <p class="feat-desc">Visa・Master・JCB・Amex・QUICPay・交通系電子マネーなど各種キャッシュレス決済に対応しています。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-head reveal">
+    <div><p class="eyebrow eyebrow-p">Gallery</p><h2 class="sec-title title-dark">作品ギャラリー</h2></div>
+    <a class="insta-link" href="https://www.instagram.com/easen.nail/" target="_blank" rel="noopener">@easen.nail →</a>
+  </div>
+  <!-- gallery section - SnapWidget connected -->
+
+  <!-- SnapWidget 本体 -->
+  <div class="snapwidget-wrap reveal" id="snapwidgetWrap">
+    <!-- SnapWidget -->
+    <iframe src="https://snapwidget.com/embed/1120477"
+            class="snapwidget-widget"
+            allowtransparency="true"
+            frameborder="0"
+            scrolling="no"
+            style="border:none; overflow:hidden; width:100%; height:520px;"
+            title="Posts from Instagram">
+    </iframe>
+  </div>
+
+  <!-- プレースホルダー（不要になったので非表示） -->
+  <div class="gal-placeholder reveal" id="galPlaceholder" style="display:none;"></div>
+  <div class="gal-cta reveal">
+    <a class="btn-main" href="https://www.instagram.com/easen.nail/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.7rem;">
+      <svg width="16" height="16" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="6" stroke="white" stroke-width="1.5"/><circle cx="16" cy="16" r="6" stroke="white" stroke-width="1.5"/><circle cx="23" cy="9" r="1.5" fill="white"/></svg>
+      Instagramでもっと見る
+    </a>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="reveal">
+    <p class="eyebrow eyebrow-p">Price List</p>
+    <h2 class="sec-title title-dark">メニュー・料金</h2>
+    <div class="div-p"></div>
+  </div>
+  <div class="menu-tabs reveal">
+    <button class="menu-tab active" onclick="switchTab('gel',this)">Gel Nail</button>
+    <button class="menu-tab" onclick="switchTab('sculp',this)">長さ出し</button>
+    <button class="menu-tab" onclick="switchTab('off',this)">オフ</button>
+    <button class="menu-tab" onclick="switchTab('foot',this)">Foot</button>
+    <button class="menu-tab" onclick="switchTab('opt',this)">Option</button>
+  </div>
+
+  <!-- GEL -->
+  <div id="tab-gel" class="menu-panel active">
+    <div class="menu-grid">
+      <div class="menu-cat">
+        <div class="menu-cat-head">Standard</div>
+        <ul class="menu-list">
+          <li class="menu-row"><div><div class="menu-name">ワンカラー・ラメ・ラメグラ<span class="bdg-p">人気</span></div><div class="menu-note-sm">2色まで選択可</div></div><span class="menu-price">¥5,500</span></li>
+          <li class="menu-row"><div><div class="menu-name">マグネット・フラッシュネイル<span class="bdg-p">人気</span></div><div class="menu-note-sm">2色まで/組み合わせ可</div></div><span class="menu-price">¥6,000</span></li>
+          <li class="menu-row"><div><div class="menu-name">フレンチ</div><div class="menu-note-sm">スキンカラーベース有り</div></div><span class="menu-price">¥7,500</span></li>
+          <li class="menu-row"><div><div class="menu-name">カラーグラデーション</div><div class="menu-note-sm">200色以上から選択可</div></div><span class="menu-price">¥7,500</span></li>
+          <li class="menu-row"><div><div class="menu-name">ガラスフレンチ<span class="bdg-g">新規</span></div></div><span class="menu-price">¥7,500</span></li>
+          <li class="menu-row"><div><div class="menu-name">ベビーブーマー<span class="bdg-g">新規</span></div><div class="menu-note-sm">上品なカラーグラデーション</div></div><span class="menu-price">¥7,500</span></li>
+          <li class="menu-row"><div><div class="menu-name">ミラーオーロラネイル</div><div class="menu-note-sm">50種類以上から選択</div></div><span class="menu-price">¥7,500</span></li>
+        </ul>
+      </div>
+      <div class="menu-cat">
+        <div class="menu-cat-head">Design Course</div>
+        <ul class="menu-list">
+          <li class="menu-row"><div><div class="menu-name">シンプルコース 90分<span class="bdg-p">人気</span></div><div class="menu-note-sm">初回オフ無料・パーツ2個・ストーン10粒付</div></div><span class="menu-price">¥7,000</span></li>
+          <li class="menu-row"><div><div class="menu-name">スタンダードコース 120分</div><div class="menu-note-sm">パーツ4個・ストーン10粒付</div></div><span class="menu-price">¥8,500</span></li>
+          <li class="menu-row"><div><div class="menu-name">フルアートコース 150分</div><div class="menu-note-sm">アート10本・パーツ6個・ストーン10粒付</div></div><span class="menu-price">¥10,000</span></li>
+          <li class="menu-row"><div><div class="menu-name">クラッシュネイル</div><div class="menu-note-sm">チップ長さ出し10本込</div></div><span class="menu-price">¥10,500</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="menu-foot-note">※ 料金はすべて税込表示です。初回他店ソフトジェルオフ・4週以内の自店オフは無料。</p>
+  </div>
+
+  <!-- SCULP -->
+  <div id="tab-sculp" class="menu-panel">
+    <div class="menu-grid">
+      <div class="menu-cat">
+        <div class="menu-cat-head">チップ長さ出し</div>
+        <ul class="menu-list">
+          <li class="menu-row"><div><div class="menu-name">チップ長さ出し 1本</div></div><span class="menu-price">¥500</span></li>
+          <li class="menu-row"><div><div class="menu-name">チップ長さ出し 10本</div></div><span class="menu-price">¥5,000</span></li>
+          <li class="menu-row"><div><div class="menu-name">長さ出し10本＋ワンカラー＋パーツ2個<span class="bdg-p">No.1</span></div></div><span class="menu-price">¥7,500</span></li>
+          <li class="menu-row"><div><div class="menu-name">長さ出し10本＋マグネット＋パーツ2個<span class="bdg-p">No.2</span></div></div><span class="menu-price">¥8,000</span></li>
+          <li class="menu-row"><div><div class="menu-name">長さ出し10本＋スタンダード＋パーツ4個</div></div><span class="menu-price">¥11,800</span></li>
+          <li class="menu-row"><div><div class="menu-name">長さ出し10本＋フルアート</div></div><span class="menu-price">¥13,500</span></li>
+          <li class="menu-row"><div><div class="menu-name">亀裂補強 1本</div></div><span class="menu-price">¥350</span></li>
+          <li class="menu-row"><div><div class="menu-name">長さ出しフィルイン再利用 10本</div></div><span class="menu-price">¥1,000</span></li>
+        </ul>
+      </div>
+      <div class="menu-cat">
+        <div class="menu-cat-head">スタッフ限定定額</div>
+        <ul class="menu-list">
+          <li class="menu-row"><div><div class="menu-name">伊藤 限定定額ネイル</div><div class="menu-note-sm">サンプルから選ぶ・初回オフ無料</div></div><span class="menu-price">¥7,000〜</span></li>
+          <li class="menu-row"><div><div class="menu-name">リエ 限定定額ネイル</div><div class="menu-note-sm">サンプルから選ぶ・初回オフ無料</div></div><span class="menu-price">¥7,600</span></li>
+          <li class="menu-row"><div><div class="menu-name">沙理亜 限定定額ネイル</div><div class="menu-note-sm">初回オフ無料・色変更可</div></div><span class="menu-price">¥7,800</span></li>
+          <li class="menu-row"><div><div class="menu-name">Jr.ネイリスト ワンカラー<span class="bdg-s">新規</span></div><div class="menu-note-sm">初回ソフトジェルオフ無料</div></div><span class="menu-price">¥2,500</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFF -->
+  <div id="tab-off" class="menu-panel">
+    <div class="menu-grid">
+      <div class="menu-cat">
+        <div class="menu-cat-head">付替オフ（ネイルとセット）</div>
+        <ul class="menu-list">
+          <li class="menu-row"><div><div class="menu-name">初回 他店ソフトジェルオフ</div></div><span class="menu-price" style="color:var(--pink-deep);">無料</span></li>
+          <li class="menu-row"><div><div class="menu-name">自店ソフトジェルオフ（4週以内）</div></div><span class="menu-price" style="color:var(--pink-deep);">無料</span></li>
+          <li class="menu-row"><div><div class="menu-name">再来 自店 or 他店（4週以降）</div></div><span class="menu-price">¥550</span></li>
+          <li class="menu-row"><div><div class="menu-name">スカルプ・チップ・ハードジェルオフ</div></div><span class="menu-price">¥2,000</span></li>
+        </ul>
+      </div>
+      <div class="menu-cat">
+        <div class="menu-cat-head">オフのみ</div>
+        <ul class="menu-list">
+          <li class="menu-row"><div><div class="menu-name">ソフトジェルオフ</div><div class="menu-note-sm">甘皮処理・ファイリング込み</div></div><span class="menu-price">¥3,000</span></li>
+          <li class="menu-row"><div><div class="menu-name">スカルプ・チップ・ハードジェルオフ</div><div class="menu-note-sm">甘皮処理・ファイリング込み</div></div><span class="menu-price">¥4,000</span></li>
+        </ul>
+        <p style="margin-top:1rem;font-size:.88rem;color:var(--muted);line-height:1.9;">※ 埋め尽くし・大きいパーツ・特殊パーツ有は +1本 ¥200</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOT -->
+  <div id="tab-foot" class="menu-panel">
+    <div class="menu-grid">
+      <div class="menu-cat">
+        <div class="menu-cat-head">Foot Nail</div>
+        <ul class="menu-list">
+          <li class="menu-row"><div><div class="menu-name">フット ワンカラー・ラメ</div><div class="menu-note-sm">2色まで選択可</div></div><span class="menu-price">¥6,000</span></li>
+          <li class="menu-row"><div><div class="menu-name">フット 定額ネイル<span class="bdg-g">新規</span></div><div class="menu-note-sm">サンプルから選ぶ</div></div><span class="menu-price">¥5,000</span></li>
+        </ul>
+      </div>
+      <div class="menu-cat">
+        <div class="menu-cat-head">ご注意</div>
+        <p style="font-size:.9rem;line-height:2.1;color:var(--muted);">フットメニューはお気軽にご相談ください。<br>オフあり・なしはご予約時にご選択ください。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTION -->
+  <div id="tab-opt" class="menu-panel">
+    <div class="menu-grid">
+      <div class="menu-cat">
+        <div class="menu-cat-head">Option</div>
+        <ul class="menu-list">
+          <li class="menu-row"><div><div class="menu-name">パーツつけ放題</div><div class="menu-note-sm">クーポンと同時予約のみ</div></div><span class="menu-price">¥3,000</span></li>
+          <li class="menu-row"><div><div class="menu-name">300円パーツ</div></div><span class="menu-price">¥300</span></li>
+          <li class="menu-row"><div><div class="menu-name">500円パーツ</div></div><span class="menu-price">¥500</span></li>
+          <li class="menu-row"><div><div class="menu-name">埋め尽くし・キルティング 1本</div></div><span class="menu-price">¥500</span></li>
+          <li class="menu-row"><div><div class="menu-name">1週間以内お直し</div></div><span class="menu-price" style="color:var(--pink-deep);">無料</span></li>
+        </ul>
+      </div>
+      <div class="menu-cat">
+        <div class="menu-cat-head">ご注意事項</div>
+        <p style="font-size:.9rem;line-height:2.1;color:var(--muted);">・ご連絡なく10分以上の遅刻は無断キャンセル扱い<br>・当日キャンセル・時間変更はやむを得ない場合を除きお断り<br>・確実にご来店できる日時でのご予約をお願いします</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUPONS -->
+<section id="coupons">
+  <div class="coupons-inner">
+  <div class="reveal">
+    <p class="eyebrow eyebrow-p">Coupon</p>
+    <h2 class="sec-title title-white">お得なクーポン</h2>
+    <div class="div-g"></div>
+  </div>
+  <div class="coupon-grid">
+    <div class="coupon-card reveal"><div class="cbadges"><span class="cbadge g">人気No.1</span><span class="cbadge">全員</span></div><div class="cprice">¥7,500</div><div class="cname">チップ長さ出し10本 ワンカラーorラメグラ ☆パーツ2個無料</div><div class="cdesc">マグネット・フラッシュネイル含む。パーツ2個無料付。</div></div>
+    <div class="coupon-card reveal d1"><div class="cbadges"><span class="cbadge g">人気No.2</span><span class="cbadge">全員</span></div><div class="cprice">¥8,000</div><div class="cname">チップ長さ出し10本 マグネット＆フラッシュネイル ☆パーツ2個付</div><div class="cdesc">初回ジェルオフ込。補強・オフありの場合は要メニュー追加。</div></div>
+    <div class="coupon-card reveal"><div class="cbadges"><span class="cbadge">全員</span></div><div class="cprice">¥5,500</div><div class="cname">うる艶ワンカラーorラメグラ 2色まで選べる</div><div class="cdesc">ワンカラー・ラメグラデーション。ラメグラベースありの場合1色のみ。</div></div>
+    <div class="coupon-card reveal d1"><div class="cbadges"><span class="cbadge">全員</span></div><div class="cprice">¥8,500</div><div class="cname">持ち込みデザイン スタンダードコース 120分</div><div class="cdesc">シンプルデザイン。パーツ4個・ストーン10粒付き。</div></div>
+    <div class="coupon-card reveal"><div class="cbadges"><span class="cbadge">全員</span></div><div class="cprice">¥13,500</div><div class="cname">チップ長さ出し10本 持ち込みデザイン フルアートコース</div><div class="cdesc">ワンホンネイル・キラキラネイル・シンプルデザイン対応。</div></div>
+    <div class="coupon-card reveal d1"><div class="cbadges"><span class="cbadge s">新規</span></div><div class="cprice">¥2,500</div><div class="cname">Jr.ネイリスト 2色選べる ワンカラーorラメ</div><div class="cdesc">初回ソフトジェルオフ無料。Jr.ネイリストによる施術。</div></div>
+  </div>
+  <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+    <a class="btn-main" href="https://beauty.hotpepper.jp/kr/slnH000728893/coupon/" target="_blank" rel="noopener" style="display:inline-block;">ホットペッパーでクーポンを見る</a>
+  </div>
+  </div>
+</section>
+
+<!-- RESERVE -->
+<section id="reserve">
+  <div class="reserve-wrap reveal">
+    <p class="eyebrow eyebrow-p" style="text-align:center;">Reservation</p>
+    <h2 class="sec-title title-grad" style="text-align:center;">ご予約</h2>
+    <div class="div-p div-center"></div>
+    <p class="reserve-body">ご予約はホットペッパービューティーまたは<br>Instagram DM よりお受けしております。<br>お気軽にご連絡ください。</p>
+    <div class="reserve-btns">
+      <a class="btn-reserve" href="https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000728893" target="_blank" rel="noopener">ホットペッパーで予約</a>
+      <a class="btn-reserve-out" href="https://www.instagram.com/easen.nail/" target="_blank" rel="noopener">Instagram DM</a>
+    </div>
+    <div class="reserve-info">
+      <div class="ri"><div class="ri-label">Hours</div><div class="ri-val">10:00 – 21:00</div></div>
+      <div class="ri"><div class="ri-label">Holiday</div><div class="ri-val">年末年始のみ</div></div>
+      <div class="ri"><div class="ri-label">Payment</div><div class="ri-val">各種カード・電子マネー対応</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section id="access">
+  <div class="reveal">
+    <p class="eyebrow eyebrow-p">Access</p>
+    <h2 class="sec-title title-white">アクセス</h2>
+    <div class="div-p"></div>
+    <div class="acc-list">
+      <div class="acc-row"><div class="acc-ico">📍</div><div><div class="acc-label">Address</div><div class="acc-val">愛知県名古屋市中区大須2丁目18<br>菊千代 Cranberry 2F</div></div></div>
+      <div class="acc-row"><div class="acc-ico">🚃</div><div><div class="acc-label">Station</div><div class="acc-val">大須観音駅 2番出口より<strong style="color:rgba(255,255,255,.7);">徒歩3分</strong><br>伏見通を南へ100m → 左折 → 任王門通を100m → 左側<br>（靴専科大須店の2階）</div></div></div>
+      <div class="acc-row"><div class="acc-ico">🕐</div><div><div class="acc-label">Hours</div><div class="acc-val">10:00 – 21:00｜年末年始のみ休業</div></div></div>
+      <div class="acc-row"><div class="acc-ico">📩</div><div><div class="acc-label">Contact</div><div class="acc-val">Instagram DM: <a href="https://www.instagram.com/easen.nail/" target="_blank" rel="noopener">@easen.nail</a></div></div></div>
+    </div>
+  </div>
+  <div class="map-wrap reveal">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.9040280222457!2d136.89817097606232!3d35.15901417276037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600377e4b33527d5%3A0xe08db6c9a0f401b1!2z44ON44Kk44Or44K144Ot44OzIEVBU0VO!5e0!3m2!1sja!2sjp!4v1774169420113!5m2!1sja!2sjp"
+            width="100%" height="100%"
+            style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">EASEN</div>
+  <div class="footer-sns">
+    <a href="https://www.instagram.com/easen.nail/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://beauty.hotpepper.jp/kr/slnH000728893/" target="_blank" rel="noopener">HotPepper</a>
+  </div>
+  <div class="footer-copy">© 2025 EASEN Nail Salon. All rights reserved.</div>
+</footer>
+
+<script>
+  // 口コミスライダー
+  let currentReview = 0;
+  const slides = document.querySelectorAll('.review-slide');
+  const dots   = document.querySelectorAll('.review-dot');
+
+  function goReview(index) {
+    slides[currentReview].classList.remove('active');
+    dots[currentReview].classList.remove('active');
+    currentReview = index;
+    slides[currentReview].classList.add('active');
+    dots[currentReview].classList.add('active');
+  }
+
+  // 4秒ごとに自動スライド
+  setInterval(() => {
+    goReview((currentReview + 1) % slides.length);
+  }, 4000);
+
+  // Nav scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobMenu   = document.getElementById('mobMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobMenu.classList.toggle('open');
+    document.body.style.overflow = mobMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mobMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Menu tabs（引数でbtnを受け取る形に統一・eventオブジェクト不要）
+  function switchTab(id, btn) {
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const panel = document.getElementById('tab-' + id);
+    if (panel) panel.classList.add('active');
+  }
+
+  // SnapWidget は設定済み（ID: 1120477）
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Instagram embed.js loader
+  if (document.querySelector('.instagram-media')) {
+    const s = document.createElement('script');
+    s.src = 'https://www.instagram.com/embed.js';
+    s.async = true;
+    document.body.appendChild(s);
+  }
+</script>
+</body>
+</html>
