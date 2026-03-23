@@ -524,6 +524,57 @@
     .faq-item.open .faq-a { display:block; }
     .faq-item.open .faq-icon { transform:rotate(45deg); }
 
+    /* ── LOADING SCREEN ── */
+    #loading {
+      position:fixed; inset:0; z-index:9000;
+      background:linear-gradient(160deg, #FEF0F6 0%, #FAE4EE 50%, #F8F0FF 100%);
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      transition:opacity .6s ease, visibility .6s ease;
+    }
+    #loading.hidden { opacity:0; visibility:hidden; pointer-events:none; }
+    .loading-logo {
+      font-family:'Playfair Display',serif; font-size:3rem; font-weight:500;
+      letter-spacing:.3em;
+      background:linear-gradient(135deg, var(--pink-deep) 0%, #C85A8A 40%, var(--gold) 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      animation:loadingPulse 1.5s ease-in-out infinite;
+    }
+    .loading-sub {
+      font-family:'Sacramento',cursive; font-size:1.4rem; margin-top:.5rem;
+      background:linear-gradient(110deg, var(--gold), var(--silver));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      opacity:.8;
+    }
+    .loading-bar {
+      width:80px; height:1px; margin-top:2rem;
+      background:var(--bp);
+      position:relative; overflow:hidden;
+    }
+    .loading-bar::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(90deg, var(--pink-deep), var(--gold));
+      animation:loadingBar 1.2s ease-in-out infinite;
+    }
+    @keyframes loadingPulse { 0%,100%{opacity:1} 50%{opacity:.6} }
+    @keyframes loadingBar { 0%{transform:translateX(-100%)} 100%{transform:translateX(100%)} }
+
+    /* ── MOBILE FIXED RESERVE BUTTON ── */
+    #mob-reserve-btn {
+      display:none;
+      position:fixed; bottom:0; left:0; right:0; z-index:150;
+      padding:.9rem 1.5rem;
+      background:linear-gradient(135deg, var(--pink), var(--pink-deep) 60%, var(--gold) 130%);
+      color:white; text-align:center; text-decoration:none;
+      font-size:.85rem; letter-spacing:.2em; text-transform:uppercase;
+      box-shadow:0 -4px 20px rgba(217,112,154,.3);
+      transition:opacity .3s;
+    }
+    #mob-reserve-btn.hide { opacity:0; pointer-events:none; }
+    @media(max-width:768px) {
+      #mob-reserve-btn { display:block; }
+      body { padding-bottom:52px; }
+    }
+
     /* ── RESPONSIVE（追加分） ── */
     @media(max-width:768px) {
       .staff-grid { grid-template-columns:repeat(2,1fr); }
@@ -563,6 +614,18 @@
   </style>
 </head>
 <body>
+
+<!-- LOADING SCREEN -->
+<div id="loading">
+  <div class="loading-logo">EASEN</div>
+  <div class="loading-sub">Easen nail</div>
+  <div class="loading-bar"></div>
+</div>
+
+<!-- MOBILE FIXED RESERVE BUTTON -->
+<a id="mob-reserve-btn" href="https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000728893" target="_blank" rel="noopener">
+  ご予約はこちら
+</a>
 
 <!-- NAV -->
 <nav id="navbar">
@@ -1185,6 +1248,25 @@
 </footer>
 
 <script>
+  // ローディング画面
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('loading').classList.add('hidden');
+    }, 1200);
+  });
+
+  // モバイル固定予約ボタン（予約セクション付近で非表示）
+  const mobBtn = document.getElementById('mob-reserve-btn');
+  const reserveSection = document.getElementById('reserve');
+  if (mobBtn && reserveSection) {
+    const btnObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        mobBtn.classList.toggle('hide', e.isIntersecting);
+      });
+    }, { threshold: 0.3 });
+    btnObserver.observe(reserveSection);
+  }
+
   // FAQ アコーディオン
   function toggleFaq(el) {
     const item = el.parentElement;
