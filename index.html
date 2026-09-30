@@ -527,8 +527,8 @@
     /* ── SEASONAL BANNER ── */
     #seasonal-banner {
       position:relative; overflow:hidden;
-      background:linear-gradient(135deg, #FEF0F6 0%, #FAE4EE 40%, #F8F0FF 100%);
-      border-bottom:1px solid rgba(242,167,195,.3);
+      background:linear-gradient(135deg, #FFF4EC 0%, #FFE8D6 40%, #FFF0E0 100%);
+      border-bottom:1px solid rgba(210,120,60,.25);
       padding:1rem 3rem;
       display:flex; align-items:center; justify-content:center; gap:1.2rem;
       text-align:center;
@@ -536,13 +536,13 @@
     #seasonal-banner::before {
       content:''; position:absolute; inset:0;
       background:
-        radial-gradient(ellipse 40% 80% at 10% 50%, rgba(242,167,195,.2) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 80% at 90% 50%, rgba(212,175,110,.12) 0%, transparent 60%);
+        radial-gradient(ellipse 40% 80% at 10% 50%, rgba(210,100,40,.15) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 80% at 90% 50%, rgba(180,120,50,.12) 0%, transparent 60%);
       pointer-events:none;
     }
     .banner-petals {
       font-size:1.2rem; letter-spacing:.1em; opacity:.8;
-      animation:petalSway 3s ease-in-out infinite;
+      animation:leafSway 3s ease-in-out infinite;
     }
     .banner-petals:last-child { animation-delay:1.5s; }
     .banner-text {
@@ -551,10 +551,10 @@
     }
     .banner-text strong {
       display:block; font-size:1.05rem; font-style:normal; letter-spacing:.08em;
-      background:linear-gradient(110deg, var(--pink-deep), var(--gold));
+      background:linear-gradient(110deg, #C8602A, #D4A843);
       -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
-    @keyframes petalSway { 0%,100%{transform:rotate(-8deg) translateY(0)} 50%{transform:rotate(8deg) translateY(-4px)} }
+    @keyframes leafSway { 0%,100%{transform:rotate(-8deg) translateY(0)} 50%{transform:rotate(8deg) translateY(-4px)} }
     .banner-close {
       position:absolute; right:1rem; top:50%; transform:translateY(-50%);
       background:none; border:none; cursor:pointer; font-size:1rem;
@@ -567,7 +567,7 @@
       .banner-text { font-size:.82rem; }
     }
     @media(prefers-color-scheme:dark) {
-      #seasonal-banner { background:linear-gradient(135deg, #2A1A24 0%, #221420 40%, #1E1428 100%); }
+      #seasonal-banner { background:linear-gradient(135deg, #2A1A10 0%, #231508 40%, #1E1A10 100%); }
     }
     #loading {
       position:fixed; inset:0; z-index:9000;
@@ -725,14 +725,14 @@
   <div class="loading-bar"></div>
 </div>
 
-<!-- SEASONAL BANNER（春・桜） -->
+<!-- SEASONAL BANNER（秋） -->
 <div id="seasonal-banner">
-  <span class="banner-petals">🌸</span>
+  <span class="banner-petals">🍂</span>
   <div class="banner-text">
-    <strong>Spring Campaign 2026</strong>
-    桜の季節に、指先も春色に。春限定カラー受付中です。
+    <strong>Autumn Campaign 2026</strong>
+    深まる秋に、指先も秋色に。秋限定カラー受付中です。
   </div>
-  <span class="banner-petals">🌸</span>
+  <span class="banner-petals">🍂</span>
   <button class="banner-close" onclick="closeBanner()" aria-label="閉じる">✕</button>
 </div>
 
